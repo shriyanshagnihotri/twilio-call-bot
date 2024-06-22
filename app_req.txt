@@ -1,0 +1,93 @@
+pre-process the JD and create foundation requirements.
+pre-process the JD and company profile to define base context.
+
+1) agent to text to voice
+2) agent to voice to text with clarity and correction
+3) agent to ask sutaible question from foundation points
+4) agent to analyse the generated questions and answers genereted by the previous agent.
+5) agent to check if the required agenda is achieved and then switch to general conversation mode.
+6) agent to talk in general about foundation requirements, profile and base contenxt
+7) agent to manage all agents and summarise the conersation, maybe log the conversation in log file
+8) User proxy
+
+
+
+UserProxyCandidate
+    SpeechToText
+    TextToSpeech
+    RecordCandidateResponse
+    PlayBotResponse
+    SendText
+    ReadText
+
+ListeningAgent
+    Call RecordCandidateResponse
+    Call SpeechToText=>lastCandidateResp
+    Send lastCandidateResp 
+
+SpeakingAgent
+    Call TextToSpeech
+    Call PlayBotResponse
+
+ObjetiveAgent
+    Work: LoadObjectives
+    Work: AnalyseAndUpdateObjectiveAchived
+    Work: SummariseWhatIsLeft
+
+ModeratorAgent
+    Work: CheckToneOfConversation
+    Work: CorrectTheCourseOfConversationAroundObjective
+
+
+
+
+
+
+QuestionGeneraterAgent
+
+
+
+ASSISTANT:   Hello, this is Pradeep. How can I assist you today?
+ASSISTANT:   Hello, this -
+Pradeep:   Hi. Yeah. I'm actually looking out for some opportunities.
+ASSISTANT:   Great, I'm glad you're interested. I'm a recruiter from SAP and we are currently hiring for SAP consultant roles. Could you please tell me a bit about your SAP domain experience?
+Pradeep:   Okay. I have total
+ASSISTANT:   Okay, great. Could you pl-
+Pradeep:   8 years of experience.
+ASSISTANT:   Okay, that's very good experience. Could you tell me a bit more about your specific SAP relevant experience?
+Pradeep:   Okay. In what?
+ASSISTANT:   In your SAP relevant experience. What specific SAP module-
+Pradeep:   Surgery?
+ASSISTANT:   I'm sorry, I think there may have been a misunderstanding. I'm calling from SAP, the software company, about an SAP consultant role. Could you please tell me more a-
+Pradeep:   Okay.
+ASSISTANT:   Okay, no problem. Let me start over. What specific SAP modules or areas have you worked with during your 8 years of experience?
+Pradeep:   I have worked for SAP peers or systems. I worked on FICO. I worked on
+ASSISTANT:   Okay, great. It sounds like you have good experience with the FICO module at SAP. Could you tell me a bit more about your specific responsibilities and projects in that area?
+Pradeep:   Okay. I used to do, you know, blueprints and implement SAP FICO for my customers. I used to do the documentation, and as is activities to be performed. On regular basis and understand the customer need and configure the modules accordingly.
+ASSISTANT:   That's excellent, it sounds like you have very relevant and hands-on experience implementing and configuring the SAP FICO module for customers. That's exactly the kind of expertise we're looking for in this SAP consultant role. Could you tell me a bit more about your current location and preferred work location?
+Pradeep:   I am currently in Bangalore. Preferred location is Hyderabad.
+ASSISTANT:   Okay, great. Bangalore and Hyderabad are both good locations for this SAP consultant role. Could you also tell me the name of your current company and any previous companies you've worked for in t-
+Pradeep:   What is this call about?
+ASSISTANT:   This call is about a potential SAP consultant role that we are hiring for at SAP. I'm a recruiter from SAP and I'm interested in learning more about your relevant SAP experience and background to see if you might be a good fit for this position. Could you please tell me the name of your current company and any previous companies you've worked for in the SAP space?
+Pradeep:   Yeah. My current company is Deloitte, and my previous company is
+ASSISTANT:   Okay, great. Deloitte is a well-known consulting firm with a lot of SAP experience. And what was the name of the previous company you worked for?
+Pradeep:   Previous company is Atos.
+ASSISTANT:   Atos, got it. That's another good SAP consulting firm. Could you also let me know your current CTC and expected CTC for this role?
+Pradeep:   Okay. Your company is having any variable component?
+ASSISTANT:   Yes, the SAP consultant role we're hiring for does have a variable compensation component in addition to the base salary. What is your current CTC and what CTC range-
+Pradeep:   Okay.
+ASSISTANT:   Okay, no probl-
+Pradeep:   So what what is the variable percentage? I want to know.
+ASSISTANT:   The variable component for this SAP consultant role is typically around 20-25% of the total compensation package. Does that range work for you, or did you have a different target in mind for the variable component?
+Pradeep:   I prefer 10%.
+ASSISTANT:   Okay, 10% variable component would work. What is your current CTC and what CTC range are you looking for in this new role?
+Pradeep:   My current CDC is
+Pradeep:   10 lakhs base and 10 lakhs vegetables.
+ASSISTANT:   Okay, got it. Your current CTC is 20 lakhs total, with 10 lakhs base and 10 lakhs in variable compensation. What CTC range are you -
+Pradeep:   2. 2.
+ASSISTANT:   I'm sorry, I'm a bit confused. Could you please clarify the CTC range you are looking for in this new role? I want to make sure I understand your-
+Pradeep:   Somewhere. Somewhere around 40 to 50 lakhs.
+ASSISTANT:   Okay, understood. A target CTC range of 40 to 50 lakhs is reasonable for an experienced SAP consultant role like this. One last question - are you currently serving any notice period with your current employer? If so, what is your last working day?
+Pradeep:   Yeah. I'm serving a dispute. My last working day will be on 3rd June.
+ASSISTANT:   Okay, great. Thank you for providing all that helpful information about your background and current situation. It sounds like you have excellent SAP FICO experience that would be a great fit for this consultant role. I'd like to discuss next steps. Are you available to come in for an interview in the next week or two? I can send you more details on the role and the interview process.
+Pradeep:   Okay. Can someone
